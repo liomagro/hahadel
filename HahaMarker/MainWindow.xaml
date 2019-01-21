@@ -1,0 +1,50 @@
+﻿<Window x:Class="HahaMarker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HahaMarker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />            
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden">
+            <Slider Name="PositionSlider" ValueChanged="Slider_ValueChanged" 
+            Thumb.DragStarted="PositionSlider_DragStarted"
+            Thumb.DragCompleted="PositionSlider_DragCompleted"/>
+        </ScrollViewer>
+
+      
+        
+        <TextBlock Grid.Row="1" Name="CurrentTime"></TextBlock>
+        
+        
+        <Grid Grid.Row="2">         
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Click="PlayButton_Click">Play</Button>
+            <Button Grid.Column="1" Click="StopButton_Click">Stop</Button>
+            <Button Grid.Column="2" 
+                    MouseDown="Button_MouseDown" MouseUp="Button_MouseUp" 
+                    PreviewMouseLeftButtonDown="Button_MouseDown" PreviewMouseLeftButtonUp="Button_MouseUp" 
+                    MouseRightButtonDown="Button_MouseDown"
+                    MouseRightButtonUp="Button_MouseUp"
+                    
+                    Name="MarkButton">Mark</Button>
+            <Button Grid.Column="3" Click="SaveButton_Click" Name="SaveButton">Save</Button>
+        </Grid>
+    </Grid>
+</Window>

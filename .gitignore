@@ -3,3 +3,8 @@
 ################################################################################
 
 /HahaDel/bin/Debug
+/HahaDel/obj/Debug
+/HahaMarker/bin/Debug
+/HahaMarker/obj/Debug
+/packages
+/.vs/HahaDel
